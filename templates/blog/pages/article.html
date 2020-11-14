@@ -1,0 +1,21 @@
+{% extends '../../layouts/base_blog.html' %}
+
+{% block content %}
+    <div class="row">
+        <div class="col-md-4">
+            <h3>Tout les Articles</h3>
+            <ul>
+                {% for post in posts %}
+                    <a href="/blog/post/{{ post.id }}"><li>{{ post.post_title }}</li></a>
+                {% endfor %}
+            </ul>
+        </div>
+        <div class="col-md-8">
+            <article style="text-justify:distribute">
+                <h1>#{{ post.id }} - {{ post.post_title }} </h1>
+                <h4>{{ post.post_body }}</h4>
+            </article>
+        </div>
+        <div class="col-md-2"></div>
+    </div>
+{% endblock %}

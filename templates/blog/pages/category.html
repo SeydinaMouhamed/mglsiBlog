@@ -1,0 +1,12 @@
+{% extends '../../layouts/base_blog.html' %}
+
+{% block content %}
+    <h1>Liste des Categories</h1>
+    <ul>
+        <!-- {{allPost|length}} -->
+        {% for category in categories %}
+            <h3> <a href="/blog/category/{{ category.id }}/"><li>{{ category.category_title  }}</li></a></h3>
+        {% endfor %}
+    </ul>
+       
+{% endblock %}

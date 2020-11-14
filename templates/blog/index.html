@@ -1,0 +1,31 @@
+{% extends '../layouts/base_blog.html' %}
+
+{% block content %}
+    <div class="row">
+        <div class="col-md-2">
+            <h3>Categories</h3>
+            <ul>
+                {% for category in categories %}
+                    <a href="/blog/category/{{ category.id }}/"><li>{{ category.category_title }}</li></a>
+                {% endfor %}
+            </ul>
+        </div>
+        <div class="col-md-8">
+            <h2>Bienvenu sur le blog de MGLSI ( {{ posts|length }} Articles )</h2>
+            {% for post in posts%}
+                <article>
+                    <h2> <a href="/blog/post/{{ post.id }}"> #{{ post.id}} - {{ post.post_title|upper }}</a></h2>
+                    <h4>{{ post.post_body|truncatewords:30 }}</h4>
+                    <span>{{ post.post_category }}</span><br>
+                    <a href="/blog/post/{{ post.id }}">Lire la suite</a>
+                </article>
+                {% if not forloop.last %}
+                    <hr>
+                {% endif %}
+            {% empty %}
+                <h3>Il n y a pas d'article Pour le moment</h3>
+            {% endfor %}
+        </div>
+        <div class="col-md-4"></div>
+    </div>
+{% endblock content %}
