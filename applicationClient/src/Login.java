@@ -15,8 +15,6 @@ import javax.swing.JPasswordField;
 import javax.swing.JTextField;
 import javax.swing.SpringLayout;
 
-//import BaseDonnee.connexion;
-//import BaseDonnee.manipulationBD;
 
 public class Login extends JDialog {
 	public String usr;
@@ -25,11 +23,8 @@ public class Login extends JDialog {
 	private static final long serialVersionUID = 1L;
 	JTextField textField_1;
 	JPasswordField passwordField;
-    //manipulationBD bd;
-    //Thread t;
-    JButton btnConn;
-    //private final JLabel lblNewLabel = new JLabel("image login");
 
+    JButton btnConn;
 	public static void main(String[] args) {
 		try {
 			Login dialog = new Login();
@@ -42,7 +37,6 @@ public class Login extends JDialog {
 
 	public Login() {
 		
-		//setIconImage(Toolkit.getDefaultToolkit().getImage("picture/logo.PNG"));
 		setForeground(new Color(255, 69, 0));
 		setFont(new Font("DFKai-SB", Font.BOLD, 12));
 		setTitle("Application Client");
@@ -67,11 +61,8 @@ public class Login extends JDialog {
 		textField_1 = new JTextField();
 		textField_1.setColumns(10);
 		
-		btnConn = new JButton("Connecter");
-		//btnConn.setIcon(new ImageIcon("images/ajoutmatiere.gif"));
-		
+		btnConn = new JButton("Connecter");		
 		JButton btnAnn = new JButton("Annuler");
-		//btnAnn.setIcon(new ImageIcon("picture/exit.png"));
 		SpringLayout sl_panel = new SpringLayout();
 		sl_panel.putConstraint(SpringLayout.NORTH, btnConn, 1, SpringLayout.NORTH, btnAnn);
 		sl_panel.putConstraint(SpringLayout.EAST, btnAnn, 0, SpringLayout.EAST, textField_1);
@@ -116,18 +107,8 @@ public class Login extends JDialog {
 		
 		JPanel panel_1 = new JPanel();
 		sl_panel.putConstraint(SpringLayout.NORTH, panel_1, 10, SpringLayout.NORTH, panel);
-		//sl_panel.putConstraint(SpringLayout.WEST, panel_1, 10, SpringLayout.WEST, panel);
 		sl_panel.putConstraint(SpringLayout.SOUTH, panel_1, 232, SpringLayout.NORTH, panel);
-		//sl_panel.putConstraint(SpringLayout.EAST, panel_1, 144, SpringLayout.WEST, panel);
 		panel.add(panel_1);
-//		SpringLayout sl_panel_1 = new SpringLayout();
-//		sl_panel_1.putConstraint(SpringLayout.NORTH, lblNewLabel, 0, SpringLayout.NORTH, panel_1);
-//		sl_panel_1.putConstraint(SpringLayout.WEST, lblNewLabel, 0, SpringLayout.WEST, panel_1);
-//		sl_panel_1.putConstraint(SpringLayout.SOUTH, lblNewLabel, 0, SpringLayout.SOUTH, panel_1);
-//		sl_panel_1.putConstraint(SpringLayout.EAST, lblNewLabel, 134, SpringLayout.WEST, panel_1);
-//		panel_1.setLayout(sl_panel_1);
-//		lblNewLabel.setIcon(new ImageIcon("picture/anigif.gif"));
-//		panel_1.add(lblNewLabel);
 		getContentPane().setLayout(groupLayout);
 
 		
@@ -149,42 +130,5 @@ public class Login extends JDialog {
 			}
 		});
 		
-//		btnConn.addActionListener(new ActionListener(){
-//			@Override
-//			public void actionPerformed(ActionEvent arg0) {
-//				usr=(textField_1.getText());
-//				//manipulationBD bd=new manipulationBD();
-//				
-//				char[] pass=passwordField.getPassword();
-//				pswr =new String(pass);
-//				System.out.println(usr+" et "+pswr);
-//				try  {
-//					//connexion c = new connexion();
-//					//Statement st =c.conn.createStatement();
-//					//ResultSet rs = st.executeQuery("Select* from login");
-//					//tests, test si nom d'utilisateur ou mdp valide ou pas. par defaut on met faux
-//					boolean tests=false;
-//					while(rs.next()){
-//						if(usr.equals(rs.getObject("usr")) && pswr.equals(rs.getObject("Password"))){
-//							//nom d'utilisateur valide
-//							tests=true;
-//							//bd.InsertConnect(usr);
-//							//new accueilP();
-//							dispose();
-//							}
-//					}
-//					//si user ou mdp invalide, on affiche un message d'erreur
-//						if(tests==false){
-//                         JOptionPane.showMessageDialog(null, "Le nom d'utilisateur ou le mot de pass est incorrect", "INCONNU", JOptionPane.ERROR_MESSAGE);                        
-//					}
-//				}catch(SQLException ex){
-//					ex.printStackTrace();
-//					JOptionPane.showMessageDialog(null,"ERREUR DE CONNEXION","Message d’avertissement",JOptionPane.ERROR_MESSAGE);
-//				}
-//				catch(Exception e) {
-//					e.printStackTrace();
-//					System.out.println("Echec de connexion");
-//				}
-//			}});
-		}
+	}
 }
